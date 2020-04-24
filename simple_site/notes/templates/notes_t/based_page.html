@@ -11,7 +11,7 @@
         <p>заголовок - {{ note.title }}</p>
         <p>тело - {{ note.body }}</p>
         <p>тег --
-        {% for tag in note.tag %}
+        {% for tag in note.tags.all %}
          {{ tag.name_tag }}
         {% endfor %}
         </p>
