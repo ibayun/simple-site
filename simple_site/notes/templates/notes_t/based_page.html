@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    Hello darkness, my friends!
+    {% for note in notes %}
+        <p>заголовок - {{ note.title }}</p>
+        <p>тело - {{ note.body }}</p>
+        <p>сатегория - {{ note.category.name_category }}</p>
+        <p>тег - {{ note.tag.all }}</p>
+    _____________________________________________
+    {% endfor %}
+</div>
+</body>
+</html>
