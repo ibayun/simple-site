@@ -10,8 +10,15 @@
     {% for note in notes %}
         <p>заголовок - {{ note.title }}</p>
         <p>тело - {{ note.body }}</p>
-        <p>сатегория - {{ note.category.name_category }}</p>
-        <p>тег - {{ note.tag.all }}</p>
+        <p>тег --
+        {% for tag in note.tags.all %}
+         {{ tag.name_tag }}
+        {% endfor %}
+        </p>
+
+        <p> категория- {{ note.category.name_category }}</p>
+        <p>автор - {{ note.created_by.login_user }}</p>
+        <p>дата создания - {{ note.data_of_create }}</p>
     _____________________________________________
     {% endfor %}
 </div>

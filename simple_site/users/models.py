@@ -1,10 +1,7 @@
-from django.db import models
+from django.contrib.auth.models import AbstractUser
+from django.core.signing import TimestampSigner
 
-# Create your models here.
 
+class User(AbstractUser):
+    signer = TimestampSigner(salt='Hello')
 
-class User(models.Model):
-    login_user = models.CharField(max_length=30)
-    first_name_user = models.CharField(max_length=30)
-    last_name_user = models.CharField(max_length=30)
-    email_user = models.EmailField(max_length=100)
