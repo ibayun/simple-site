@@ -19,8 +19,24 @@
         <p> категория- {{ note.category.name_category }}</p>
         <p>автор - {{ note.created_by.username }}</p>
         <p>дата создания - {{ note.data_of_create }}</p>
-    _____________________________________________
+        {{ note.comments.tk }}
+        {{ note.comments.uk }}
+
+        {% for comment in comments %}
+
+            {% if comment.nk == note %}
+                _________________
+                <p>{{ comment.uk }}</p>
+                <p>{{ comment.tk }}</p>
+                <p>{{ comment.dk }}</p>
+
+            {% endif %}
+
+        {% endfor %}
+
+    <p>###########</p>
     {% endfor %}
+
 </div>
 </body>
 </html>
