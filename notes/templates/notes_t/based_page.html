@@ -6,18 +6,18 @@
 </head>
 <body>
 <div>
-    Hello darkness, my friends!
+    Hello darkness, my friend!
     {% for note in notes %}
         <p>заголовок - {{ note.title }}</p>
         <p>тело - {{ note.body }}</p>
-        <p>тег --
+        <p>тег -
         {% for tag in note.tags.all %}
-         {{ tag.name_tag }}
+         {{ tag.name_tag }},
         {% endfor %}
         </p>
 
         <p> категория- {{ note.category.name_category }}</p>
-        <p>автор - {{ note.created_by.login_user }}</p>
+        <p>автор - {{ note.created_by.username }}</p>
         <p>дата создания - {{ note.data_of_create }}</p>
     _____________________________________________
     {% endfor %}
