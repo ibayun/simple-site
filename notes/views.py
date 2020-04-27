@@ -15,12 +15,3 @@ def all_notes(request):
                       'notes': notes,
                       'comments': comments,
                   })
-
-
-"""<User: admin>
-<User: belkapt>
->>> for el in c:
-...     el.uk_id
-... 
-1
-"""
