@@ -1,0 +1,15 @@
+{% extends "main.html" %}
+
+{% block title %} Регистрация {% endblock %}
+
+{% block content %}
+    <form method="POST" action="/register">
+      {% csrf_token %}
+
+      {% for form in forms %}
+      <p>{{ form }}</p>
+      {% endfor %}
+
+    <input type="submit" value="Зарегистрироваться">
+    </form>
+{% endblock %}
