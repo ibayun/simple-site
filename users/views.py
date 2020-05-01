@@ -13,16 +13,19 @@ def login_view(request):
         return render(request, "login.html", context={
             "error": False
         })
+
     elif request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
+
         user = authenticate(
             username=username,
             password=password
         )
         if user is not None:
             login(request, user)
-            return redirect('/notes')
+            # ToDo redirect to last url
+            return redirect('/')
         else:
             try:
                 user = User.objects.get(username=username)
@@ -35,7 +38,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return redirect("/notes")
+    return redirect("/")
 
 
 def register(request):
@@ -46,7 +49,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect("/notes")
+            return redirect("/")
     else:
         form = RegistrationForm()
     return render(request, "register.html", context={

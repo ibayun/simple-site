@@ -3,8 +3,9 @@
 {% block title %}Вход{% endblock %}
 
 {% block content %}
+<p>{{ url }} - url</p>
     <div id="main_text_on_page">
-        <form method="POST" action="/account/login">
+        <form method="POST" action="/accounts/login/">
             {% csrf_token %}
             {% if error %}
                 <div class="error"> <p>Что то пошло не так. Поробуйте ввести данные еще раз.</p>

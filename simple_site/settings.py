@@ -108,6 +108,7 @@ AUTH_USER_MODEL = 'users.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
+INCORRECT_ATTEMPTS_LIMIT = 100
 
 LANGUAGE_CODE = 'en-us'
 
@@ -126,4 +127,3 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-INCORRECT_ATTEMPTS_LIMIT = 100

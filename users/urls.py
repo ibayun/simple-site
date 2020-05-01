@@ -1,9 +1,11 @@
-from django.urls import path
+from django.urls import path, re_path
 from users import views
 
 
 urlpatterns = [
-    path("account/login", views.login_view),
+    path("accounts/login/", views.login_view, name='login'),
     path("logout/", views.logout_view),
-    path("register", views.register),
+    path("register/", views.register),
 ]
+
+# (next=\/(?P<url>((\w+)\/$)))?

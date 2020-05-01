@@ -2,6 +2,7 @@
 
 
 {% block content %}
+{% csrf_token %}
 <div>
     Hello darkness, my friend!
     {% for note in notes %}
