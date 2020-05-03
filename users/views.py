@@ -3,29 +3,31 @@ from django.shortcuts import render, redirect
 
 
 # Create your views here.
-from simple_site import settings
+from django.urls import reverse
+
 from users.forms import RegistrationForm
 from users.models import User
 
 
 def login_view(request):
+    last_page = request.GET.get('u')
     if request.method == 'GET':
         return render(request, "login.html", context={
-            "error": False
+            "error": False,
+            "u": last_page,
         })
 
     elif request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-
+        last_page = request.POST.get('u')
         user = authenticate(
             username=username,
             password=password
         )
         if user is not None:
             login(request, user)
-            # ToDo redirect to last url
-            return redirect('/')
+            return redirect('%s' %last_page if last_page != "None" else "/")
         else:
             try:
                 user = User.objects.get(username=username)

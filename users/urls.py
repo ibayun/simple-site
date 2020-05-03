@@ -7,5 +7,3 @@ urlpatterns = [
     path("logout/", views.logout_view),
     path("register/", views.register),
 ]
-
-# (next=\/(?P<url>((\w+)\/$)))?

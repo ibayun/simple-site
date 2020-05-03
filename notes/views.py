@@ -8,8 +8,7 @@ from comments.models import Comment
 from .models import Note
 
 
-# redirect_field_name='next', login_url=None
-@login_required(redirect_field_name='next')
+@login_required(redirect_field_name="u")
 def all_notes(request):
 
     notes = Note.objects.all()

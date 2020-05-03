@@ -3,9 +3,9 @@
 {% block title %}Вход{% endblock %}
 
 {% block content %}
-<p>{{ url }} - url</p>
-    <div id="main_text_on_page">
-        <form method="POST" action="/accounts/login/">
+    <div>
+        <form method="POST" action="/accounts/login/" >
+            <input type="hidden" name="u"  value="{{ u }}">
             {% csrf_token %}
             {% if error %}
                 <div class="error"> <p>Что то пошло не так. Поробуйте ввести данные еще раз.</p>
