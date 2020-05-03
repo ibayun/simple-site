@@ -1,0 +1,19 @@
+{% extends "main.html" %}
+
+{% block title %}Вход{% endblock %}
+
+{% block content %}
+    <div>
+        <form method="POST" action="/accounts/login/" >
+            <input type="hidden" name="u"  value="{{ u }}">
+            {% csrf_token %}
+            {% if error %}
+                <div class="error"> <p>Что то пошло не так. Поробуйте ввести данные еще раз.</p>
+                </div>
+            {% endif %}
+            <input placeholder="Введите логин" name="username" type="text" class="text-input">
+            <input placeholder="Введите пароль" name="password" type="password" class="text-input">
+            <input type="submit"  value="Войти">
+        </form>
+    </div>
+{% endblock %}

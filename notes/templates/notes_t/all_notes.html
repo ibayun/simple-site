@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "main.html" %}
+
+
+{% block content %}
+{% csrf_token %}
 <div>
     Hello darkness, my friend!
     {% for note in notes %}
@@ -19,6 +17,7 @@
         <p> категория- {{ note.category.name_category }}</p>
         <p>автор - {{ note.created_by.username }}</p>
         <p>дата создания - {{ note.data_of_create }}</p>
+        <p>автор был последний раз - {{ user.last_login }}</p>
         {{ note.comments.tk }}
         {{ note.comments.uk }}
 
@@ -38,5 +37,4 @@
     {% endfor %}
 
 </div>
-</body>
-</html>
+{% endblock %}
