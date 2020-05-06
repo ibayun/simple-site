@@ -1,5 +1,4 @@
 import requests
-import re
 from bs4 import BeautifulSoup
 
 """while don't touch"""
@@ -12,7 +11,7 @@ from bs4 import BeautifulSoup
 # print(link_random)
 
 
-for _ in range(7):
+for _ in range(20):
     new_resp = requests.get(
         'https://ru.m.wikipedia.org/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:Random#/random'
     )
