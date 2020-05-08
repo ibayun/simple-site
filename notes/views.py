@@ -20,5 +20,19 @@ def all_notes(request):
                   })
 
 
+@login_required(redirect_field_name="u")
+def note_detail(request):
+
+    notes = Note.objects.all()
+    comments = Comment.objects.all()
+    return render(request, 'notes_t/all_notes.html',
+                  context={
+                      'notes': notes,
+                      'comments': comments,
+                  })
+
+
+
+
 def main_page(request):
     return render(request, 'notes_t/main_page.html')
