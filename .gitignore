@@ -92,3 +92,4 @@ venv/*
 migrations
 
 all_keys.py
+async_picrures

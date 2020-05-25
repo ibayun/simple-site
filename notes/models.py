@@ -4,6 +4,9 @@ from django.shortcuts import reverse
 from django.utils.text import slugify
 from users.models import User
 # Create your models here.
+#  TODO filter(category, data_pub, author, etc...)
+#  TODO append pictures for notes
+#  TODO verify email
 
 
 def generate_slug(s):
@@ -23,7 +26,7 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name_category
-#  TODO fff
+
 
 class Note(models.Model):
     title = models.CharField(max_length=60)
